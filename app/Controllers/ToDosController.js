@@ -9,6 +9,8 @@ function _drawToDos() {
     })
     document.getElementById('to-do').innerHTML = template
 
+    // total = todos.length
+    // completed = todos.filter()
 }
 export default class ToDosController {
     constructor() {
