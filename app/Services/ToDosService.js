@@ -15,11 +15,24 @@ class ToDosService {
         ProxyState.todos = [...ProxyState.todos, new ToDo(newToDo)]
     }
 
-    // async removeToDo(id) {
-    //     await toDoApi.delete(id)
-    //     ProxyState.todos = ProxyState.todos.filter(t => t.id !== id)
-    // }
+    async removeToDo(id) {
+        await toDoApi.delete(id)
+        ProxyState.todos = ProxyState.todos.filter(t => t.id !== id)
+    }
 
+    async toggleToDo(id) {
+        let todo = ProxyState.todos.find(todo => todo.id === id)
+        console.log(todo);
+        if (todo.completed == false) {
+            todo.completed = true
+        } else if (todo.completed == true) {
+            todo.completed = false
+        }
+
+        await toDoApi.put(`${id}`, todo)
+
+        ProxyState.todos = ProxyState.todos
+    }
 
 }
 export const toDosService = new ToDosService();

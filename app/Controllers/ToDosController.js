@@ -8,6 +8,7 @@ function _drawToDos() {
         template += `${t.toDoTemplate}`
     })
     document.getElementById('to-do').innerHTML = template
+
 }
 export default class ToDosController {
     constructor() {
@@ -38,11 +39,19 @@ export default class ToDosController {
         }
     }
 
-    // async removeToDo(id) {
-    //     try {
-    //         await toDosService.removeToDo(id)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+    async removeToDo(id) {
+        try {
+            await toDosService.removeToDo(id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async toggleToDo(id) {
+        try {
+            await toDosService.toggleToDo(id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
 }
