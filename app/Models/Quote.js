@@ -6,11 +6,11 @@ export default class Quote {
     }
 
     get quoteTemplate() {
-        return `<div class="card">
-        <div class="card-body">
+        return `
+        <div class="card quote">
             <h5 class="card-title">Quote Of the Day</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${this.author}</h6>
-            <p class="card-text">${this.quote}</p>
+            <h6 class="mb-2 mouse-over">${this.author}</h6>
+            <p class="">${this.quote}</p>
         </div>`
     }
 }

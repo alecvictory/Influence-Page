@@ -10695,11 +10695,16 @@ main {
   flex-grow: 1;
 }
 
-/* #mouse_over {
-  opacity: 0;
+.quote{
+  color: black;
 }
 
-#mouse_over:hover {
-  opacity: 1;
-} */
+.mouse-over {
+  color: transparent;
+  transition: all .5s ease;
+}
+
+.quote:hover .mouse-over {
+  color: black;
+}
 /*# sourceMappingURL=main.css.map */
