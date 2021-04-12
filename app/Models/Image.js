@@ -3,9 +3,4 @@ export default class Image {
         this.id = id
         this.url = large_url
     }
-
-    // get imageTemplate() {
-    //     return `
-    //     `;
-    // }
 }

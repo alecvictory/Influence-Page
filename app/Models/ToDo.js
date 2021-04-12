@@ -1,5 +1,5 @@
 export default class ToDo {
-    constructor({ _id, completed, user, description }) {
+    constructor({ description, _id = null, completed = null, user = null }) {
         this.id = _id
         this.completed = completed
         this.user = user
@@ -7,11 +7,8 @@ export default class ToDo {
     }
 
     get toDoTemplate() {
-        return `<div class="card">
-        <div class="card-body">
-            <h5 class="card-title">To-Dos</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${this.id}</h6>
-            <p class="card-text">${this.id}</p>
-        </div>`
+        return `
+        <p class="card-text">${this.description}</p>
+        `
     }
 }

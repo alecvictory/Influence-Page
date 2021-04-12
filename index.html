@@ -25,21 +25,29 @@
         <div class="row">
             <div class="col-3 min-vh-100">
             </div>
-            <!-- clock -->
+            <!-- CLOCK -->
             <div class="col-6">
                 <div class="row flex-column min-vh-100">
                     <div class="col d-flex justify-content-center align-items-end text-danger"
                         onload="app.WeathersController.startTime()" id="time">
                     </div>
+                    <!-- QUOTE -->
                     <div class="col d-flex justify-content-center align-items-end" id="quote">
                     </div>
-                    <!-- weather / to-do card -->
+                    <!-- WEATHER / TO-DO card -->
                     <div class="col">
                         <div class="col d-flex justify-content-end align-items-start text" id="weather">
                         </div>
-                        <div class="col d-flex justify-content-end align-items-end text-danger" id="to-do">
-                            to-dos
+                        <div class="col card d-flex justify-content-end align-items-end text-danger">
+                            <h5 class="card-title">To-Dos</h5>
+                            <div id="to-do"></div>
                         </div>
+                        <form class="d-flex p-2" onsubmit="app.toDosController.addToDo()">
+                            <input type="text" name="to-do" id="" class="form-control" placeholder="To Do"
+                                aria-describedby="" minlength="3" maxlength="50" required>
+                            <button type="submit" class="btn btn-success" title='add task'><i
+                                    class="fas fa-plus"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>

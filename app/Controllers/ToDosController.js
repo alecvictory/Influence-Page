@@ -23,12 +23,26 @@ export default class ToDosController {
         }
     }
 
-    async addToDo(id) {
+    async addToDo() {
         try {
-            await toDosService.addToDo(id)
+            window.event.preventDefault()
+            let form = window.event.target
+            let newToDo = {
+                description: form['to-do'].value,
+            }
+            await toDosService.addToDo(newToDo)
+            // @ts-ignore
+            form.reset()
         } catch (error) {
             console.error(error)
         }
     }
 
+    // async removeToDo(id) {
+    //     try {
+    //         await toDosService.removeToDo(id)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 }
