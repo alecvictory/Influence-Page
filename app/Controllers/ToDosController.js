@@ -8,6 +8,7 @@ function _drawToDos() {
         template += `${t.toDoTemplate}`
     })
     document.getElementById('to-do').innerHTML = template
+    document.getElementById('counter').innerHTML = `${ProxyState.todos.filter(t => t.completed).length}:${ProxyState.todos.length}`
 
     // total = todos.length
     // completed = todos.filter()
